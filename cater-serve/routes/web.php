@@ -14,5 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return file_get_contents(resource_path('views/index.html'));
+    return file_get_contents(resource_path('views/index.php'));
+});
+Route::get('/book', function () {
+    return file_get_contents(resource_path('views/book.php'));
+});
+Route::get('/service', function () {
+    return file_get_contents(resource_path('views/service.php'));
+});
+
+Route::get('/about', function () {
+    return file_get_contents(resource_path('views/about.php'));
+});
+
+Route::get('/menu', function () {
+    return file_get_contents(resource_path('views/menu.php'));
+});
+
+Route::get('/contact', function () {
+    return file_get_contents(resource_path('views/contact.php'));
 });

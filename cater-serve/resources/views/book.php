@@ -18,15 +18,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+        <link href="/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="/lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
     </head>
 
     <body>
@@ -50,22 +50,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link">Services</a>
-                            <a href="event.html" class="nav-item nav-link">Events</a>
-                            <a href="menu.html" class="nav-item nav-link">Menu</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu bg-light">
-                                    <a href="book.html" class="dropdown-item">Booking</a>
-                                    <a href="blog.html" class="dropdown-item active">Our Blog</a>
-                                    <a href="team.html" class="dropdown-item">Our Team</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
-                                </div>
-                            </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="/" class="nav-item nav-link ">Home</a>
+                            <a href="/about" class="nav-item nav-link">About</a>
+                            <a href="/service" class="nav-item nav-link">Services</a>
+                            <a href="/menu" class="nav-item nav-link">Menu</a>
+                            <a href="/contact" class="nav-item nav-link">Contact</a>
                         </div>
                         <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
                         <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</a>
@@ -99,77 +88,103 @@
         <!-- Hero Start -->
         <div class="container-fluid bg-light py-6 my-6 mt-0">
             <div class="container text-center animated bounceInDown">
-                <h1 class="display-1 mb-4">Our Blog</h1>
+                <h1 class="display-1 mb-4">Booking</h1>
                 <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-dark" aria-current="page">Our Blog</li>
+                    <li class="breadcrumb-item text-dark" aria-current="page">Booking</li>
                 </ol>
             </div>
         </div>
         <!-- Hero End -->
 
 
-        <!-- Blog Start -->
-        <div class="container-fluid blog py-6">
+        <!-- Book Us Start -->
+        <div class="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
             <div class="container">
-                <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
-                    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Blog</small>
-                    <h1 class="display-5 mb-5">Be First Who Read News</h1>
-                </div>
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="blog-item">
-                            <div class="overflow-hidden rounded">
-                                <img src="/img/blog-1.jpg" class="img-fluid w-100" alt="">
+                <div class="row g-0">
+                    <div class="col-1">
+                        <img src="/img/background-site.jpg" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover; opacity: 0.7;" alt="">
+                    </div>
+                    <div class="col-10">
+                        <div class="border-bottom border-top border-primary bg-light py-5 px-4">
+                            <div class="text-center">
+                                <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Book Us</small>
+                                <h1 class="display-5 mb-5">Where you want Our Services</h1>
                             </div>
-                            <div class="blog-content mx-4 d-flex rounded bg-light">
-                                <div class="text-dark bg-primary rounded-start">
-                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                        <p class="fw-bold mb-0">16</p>
-                                        <p class="fw-bold mb-0">Sep</p>
-                                    </div>
+                            <div class="row g-4 form">
+                                <div class="col-lg-4 col-md-6">
+                                    <select class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Select Country</option>
+                                        <option value="1">USA</option>
+                                        <option value="2">UK</option>
+                                        <option value="3">India</option>
+                                    </select>
                                 </div>
-                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
+                                <div class="col-lg-4 col-md-6">
+                                    <select class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Select City</option>
+                                        <option value="1">Depend On Country</option>
+                                        <option value="2">UK</option>
+                                        <option value="3">India</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Select Palace</option>
+                                        <option value="1">Depend On Country</option>
+                                        <option value="2">UK</option>
+                                        <option value="3">India</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Small Event</option>
+                                        <option value="1">Event Type</option>
+                                        <option value="2">Big Event</option>
+                                        <option value="3">Small Event</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>No. Of Palace</option>
+                                        <option value="1">100-200</option>
+                                        <option value="2">300-400</option>
+                                        <option value="3">500-600</option>
+                                        <option value="4">700-800</option>
+                                        <option value="5">900-1000</option>
+                                        <option value="6">1000+</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Vegetarian</option>
+                                        <option value="1">Vegetarian</option>
+                                        <option value="2">Non Vegetarian</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="mobile" class="form-control border-primary p-2" placeholder="Your Contact No.">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="date" class="form-control border-primary p-2" placeholder="Select Date">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="email" class="form-control border-primary p-2" placeholder="Enter Your Email">
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill">Submit Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.3s">
-                        <div class="blog-item">
-                            <div class="overflow-hidden rounded">
-                                <img src="/img/blog-2.jpg" class="img-fluid w-100" alt="">
-                            </div>
-                            <div class="blog-content mx-4 d-flex rounded bg-light">
-                                <div class="text-dark bg-primary rounded-start">
-                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                        <p class="fw-bold mb-0">16</p>
-                                        <p class="fw-bold mb-0">Sep</p>
-                                    </div>
-                                </div>
-                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="blog-item">
-                            <div class="overflow-hidden rounded">
-                                <img src="/img/blog-3.jpg" class="img-fluid w-100" alt="">
-                            </div>
-                            <div class="blog-content mx-4 d-flex rounded bg-light">
-                                <div class="text-dark bg-primary rounded-start">
-                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
-                                        <p class="fw-bold mb-0">16</p>
-                                        <p class="fw-bold mb-0">Sep</p>
-                                    </div>
-                                </div>
-                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
-                            </div>
-                        </div>
+                    <div class="col-1">
+                        <img src="/img/background-site.jpg" class="img-fluid h-100 w-100 rounded-end" style="object-fit: cover; opacity: 0.7;" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Blog End -->
+        <!-- Book Us End -->
 
 
         <!-- Footer Start -->
@@ -241,23 +256,7 @@
         <!-- Footer End -->
 
 
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright bg-dark py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 my-auto text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright End -->
+ 
 
 
         <!-- Back to Top -->
