@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BookingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,4 +36,4 @@ Route::get('/contact', function () {
 });
 
 
-Route::get('/bookings', 'BookingController@index');
+Route::get('/bookings', [BookingController::class, 'index']);

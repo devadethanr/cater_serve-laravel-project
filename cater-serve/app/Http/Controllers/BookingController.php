@@ -12,7 +12,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $name = 'getnamebyid';
+        return view('book', ['name'=>$name]);
     }
 
     /**
@@ -47,7 +48,7 @@ class BookingController extends Controller
         //
     }
 
-    /**
+    /**k
      * Update the specified resource in storage.
      */
     public function update(Request $request, Book $book)
