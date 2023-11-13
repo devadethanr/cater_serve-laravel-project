@@ -34,3 +34,6 @@ Route::get('/menu', function () {
 Route::get('/contact', function () {
     return file_get_contents(resource_path('views/contact.php'));
 });
+
+
+Route::get('/bookings', 'BookingController@index');
