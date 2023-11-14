@@ -21,7 +21,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        return 'saved';
     }
 
     /**

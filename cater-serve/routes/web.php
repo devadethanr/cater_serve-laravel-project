@@ -37,3 +37,4 @@ Route::get('/contact', function () {
 
 
 Route::get('/bookings', [BookingController::class, 'index']);
+// Route::get('/bookings', [BookingController::class, 'store']);
