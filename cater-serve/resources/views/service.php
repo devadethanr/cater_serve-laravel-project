@@ -52,10 +52,8 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
                             <a href="/" class="nav-item nav-link ">Home</a>
-                            <a href="/about" class="nav-item nav-link">About</a>
                             <a href="/service" class="nav-item nav-link active">Services</a>
                             <a href="/menu" class="nav-item nav-link">Menu</a>
-                            <a href="/contact" class="nav-item nav-link">Contact</a>
                         </div>
                         <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
                         <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</a>

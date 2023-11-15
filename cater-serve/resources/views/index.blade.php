@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +29,7 @@
         <link href="/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
 
     <body>
@@ -42,23 +45,20 @@
         <div class="container-fluid nav-bar">
             <div class="container">
                 <nav class="navbar navbar-light navbar-expand-lg py-4">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="/" class="navbar-brand">
                         <h1 class="text-primary fw-bold mb-0">Cater<span class="text-dark">Serv</span> </h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
-                            <a href="/" class="nav-item nav-link ">Home</a>
-                            <a href="/about" class="nav-item nav-link active">About</a>
+                            <a href="/" class="nav-item nav-link active">Home</a>
                             <a href="/service" class="nav-item nav-link">Services</a>
                             <a href="/menu" class="nav-item nav-link">Menu</a>
-                            <a href="/contact" class="nav-item nav-link">Contact</a>
                         </div>
                         <button class="btn-search btn btn-primary btn-md-square me-4 rounded-circle d-none d-lg-inline-flex" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                        <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</a>
+                        <a href="/book" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</a>
                     </div>
                 </nav>
             </div>
@@ -88,13 +88,18 @@
 
         <!-- Hero Start -->
         <div class="container-fluid bg-light py-6 my-6 mt-0">
-            <div class="container text-center animated bounceInDown">
-                <h1 class="display-1 mb-4">About Us</h1>
-                <ol class="breadcrumb justify-content-center mb-0 animated bounceInDown">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-dark" aria-current="page">About</li>
-                </ol>
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7 col-md-12">
+                        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown">Welcome to CaterServ</small>
+                        <h1 class="display-1 mb-4 animated bounceInDown">Book <span class="text-primary">Cater</span>Serv For Your Dream Event</h1>
+                        <a href="" class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Book Now</a>
+                        <a href="" class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft">Know More</a>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <img src="/img/hero.png" class="img-fluid rounded animated zoomIn" alt="">
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Hero End -->
@@ -127,7 +132,6 @@
                                 <i class="fas fa-share text-primary me-2"></i>Delicious Deals for Delicious Meals
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary py-3 px-5 rounded-pill">About Us<i class="fas fa-arrow-right ps-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -135,139 +139,157 @@
         <!-- About End -->
 
 
-        <!-- Fact Start-->
-        <div class="container-fluid faqt py-6">
+
+        <!-- Book Us Start -->
+        <div class="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
             <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-7">
-                       <div class="row g-4">
-                            <div class="col-sm-4 wow bounceInUp" data-wow-delay="0.3s">
-                                <div class="faqt-item bg-primary rounded p-4 text-center">
-                                    <i class="fas fa-users fa-4x mb-4 text-white"></i>
-                                    <h1 class="display-4 fw-bold" data-toggle="counter-up">689</h1>
-                                    <p class="text-dark text-uppercase fw-bold mb-0">Happy Customers</p>
-                                </div>
+                <div class="row g-0">
+                    <div class="col-1">
+                        <img src="/img/background-site.jpg" class="img-fluid h-100 w-100 rounded-start" style="object-fit: cover; opacity: 0.7;" alt="">
+                    </div>
+                    <div class="col-10">
+                        <div class="border-bottom border-top border-primary bg-light py-5 px-4">
+                            <div class="text-center">
+                                <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Book Us</small>
+                                <h1 class="display-5 mb-5">Where you want Our Services</h1>
                             </div>
-                            <div class="col-sm-4 wow bounceInUp" data-wow-delay="0.5s">
-                                <div class="faqt-item bg-primary rounded p-4 text-center">
-                                    <i class="fas fa-users-cog fa-4x mb-4 text-white"></i>
-                                    <h1 class="display-4 fw-bold" data-toggle="counter-up">107</h1>
-                                    <p class="text-dark text-uppercase fw-bold mb-0">Expert Chefs</p>
+                            <div class="row g-4 form">
+                            <form method="POST" action="/register">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <div class="col-lg-4 col-md-6">
+                                    <select name="country" class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Select Country</option>
+                                        <option value="1">USA</option>
+                                        <option value="2">UK</option>
+                                        <option value="3">India</option>
+                                    </select>
                                 </div>
-                            </div>
-                            <div class="col-sm-4 wow bounceInUp" data-wow-delay="0.7s">
-                                <div class="faqt-item bg-primary rounded p-4 text-center">
-                                    <i class="fas fa-check fa-4x mb-4 text-white"></i>
-                                    <h1 class="display-4 fw-bold" data-toggle="counter-up">253</h1>
-                                    <p class="text-dark text-uppercase fw-bold mb-0">Events Complete</p>
+                                <div class="col-lg-4 col-md-6">
+                                    <select name="city" class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Select City</option>
+                                        <option value="1">Depend On Country</option>
+                                        <option value="2">UK</option>
+                                        <option value="3">India</option>
+                                    </select>
                                 </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select name="palace" class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Select Palace</option>
+                                        <option value="1">Depend On Country</option>
+                                        <option value="2">UK</option>
+                                        <option value="3">India</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select name="event_type" class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Small Event</option>
+                                        <option value="1">Event Type</option>
+                                        <option value="2">Big Event</option>
+                                        <option value="3">Small Event</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select name="palace_number" class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>No. Of Palace</option>
+                                        <option value="1">100-200</option>
+                                        <option value="2">300-400</option>
+                                        <option value="3">500-600</option>
+                                        <option value="4">700-800</option>
+                                        <option value="5">900-1000</option>
+                                        <option value="6">1000+</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <select name="food_preference" class="form-select border-primary p-2" aria-label="Default select example">
+                                        <option selected>Vegetarian</option>
+                                        <option value="1">Vegetarian</option>
+                                        <option value="2">Non Vegetarian</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input name="contact_no" type="mobile" class="form-control border-primary p-2" placeholder="Your Contact No.">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input name="event_date" type="date" class="form-control border-primary p-2" placeholder="Select Date">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input name="email" type="email" class="form-control border-primary p-2" placeholder="Enter Your Email">
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary px-5 py-3 rounded-pill">Submit Now</button>
+                                </div>
+                            </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="video">
-                            <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                                <span></span>
-                            </button>
-                        </div>
+                    <div class="col-1">
+                        <img src="/img/background-site.jpg" class="img-fluid h-100 w-100 rounded-end" style="object-fit: cover; opacity: 0.7;" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Modal Video -->
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- 16:9 aspect ratio -->
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Fact End -->
+        <!-- Book Us End -->
 
-
-        <!-- Team Start -->
-        <div class="container-fluid team py-6">
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-6">
             <div class="container">
                 <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
-                    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Team</small>
-                    <h1 class="display-5 mb-5">We have experienced chef Team</h1>
+                    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Blog</small>
+                    <h1 class="display-5 mb-5">Be First Who Read News</h1>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/team-1.jpg" alt="">
-                            <div class="team-content text-center py-3 bg-dark rounded-bottom">
-                                <h4 class="text-primary">Henry</h4>
-                                <p class="text-white mb-0">Decoration Chef</p>
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s">
+                        <div class="blog-item">
+                            <div class="overflow-hidden rounded">
+                                <img src="/img/blog-1.jpg" class="img-fluid w-100" alt="">
                             </div>
-                            <div class="team-icon d-flex flex-column justify-content-center m-4">
-                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-share-alt"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.3s">
-                        <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/team-2.jpg" alt="">
-                            <div class="team-content text-center py-3 bg-dark rounded-bottom">
-                                <h4 class="text-primary">Jemes Born</h4>
-                                <p class="text-white mb-0">Executive Chef</p>
-                            </div>
-                            <div class="team-icon d-flex flex-column justify-content-center m-4">
-                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-share-alt"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-instagram"></i></a>
+                            <div class="blog-content mx-4 d-flex rounded bg-light">
+                                <div class="text-dark bg-primary rounded-start">
+                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
+                                        <p class="fw-bold mb-0">16</p>
+                                        <p class="fw-bold mb-0">Sep</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/team-3.jpg" alt="">
-                            <div class="team-content text-center py-3 bg-dark rounded-bottom">
-                                <h4 class="text-primary">Martin Hill</h4>
-                                <p class="text-white mb-0">Kitchen Porter</p>
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.3s">
+                        <div class="blog-item">
+                            <div class="overflow-hidden rounded">
+                                <img src="/img/blog-2.jpg" class="img-fluid w-100" alt="">
                             </div>
-                            <div class="team-icon d-flex flex-column justify-content-center m-4">
-                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-share-alt"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-instagram"></i></a>
+                            <div class="blog-content mx-4 d-flex rounded bg-light">
+                                <div class="text-dark bg-primary rounded-start">
+                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
+                                        <p class="fw-bold mb-0">16</p>
+                                        <p class="fw-bold mb-0">Sep</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.7s">
-                        <div class="team-item rounded">
-                            <img class="img-fluid rounded-top " src="img/team-4.jpg" alt="">
-                            <div class="team-content text-center py-3 bg-dark rounded-bottom">
-                                <h4 class="text-primary">Adam Smith</h4>
-                                <p class="text-white mb-0">Head Chef</p>
+                    <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.5s">
+                        <div class="blog-item">
+                            <div class="overflow-hidden rounded">
+                                <img src="/img/blog-3.jpg" class="img-fluid w-100" alt="">
                             </div>
-                            <div class="team-icon d-flex flex-column justify-content-center m-4">
-                                <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fas fa-share-alt"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href=""><i class="fab fa-instagram"></i></a>
+                            <div class="blog-content mx-4 d-flex rounded bg-light">
+                                <div class="text-dark bg-primary rounded-start">
+                                    <div class="h-100 p-3 d-flex flex-column justify-content-center text-center">
+                                        <p class="fw-bold mb-0">16</p>
+                                        <p class="fw-bold mb-0">Sep</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="h5 lh-base my-auto h-100 p-3">How to get more test in your food from</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Team End -->
-
+        <!-- Blog End -->
 
         <!-- Footer Start -->
         <div class="container-fluid footer py-6 my-6 mb-0 bg-light wow bounceInUp" data-wow-delay="0.1s">
@@ -338,6 +360,7 @@
         <!-- Footer End -->
 
 
+ 
 
 
         <!-- Back to Top -->
