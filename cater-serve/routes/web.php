@@ -16,9 +16,11 @@ use App\Http\Controllers\BookingController;
 Route::get('/', function () {
     return file_get_contents(resource_path('views/index.blade.php'));
 });
+
 Route::get('/book', function () {
     return file_get_contents(resource_path('views/book.blade.php'));
 });
+
 Route::get('/service', function () {
     return file_get_contents(resource_path('views/service.php'));
 });
